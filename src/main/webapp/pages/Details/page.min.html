@@ -1,0 +1,41 @@
+<style id="Details.css">
+
+</style>
+<script id="Details.js">
+Application.$controller("DetailsPageController", ["$scope", function ($scope) {
+    "use strict";
+
+    /* perform any action with the variables inside this block(on-page-load) */
+    $scope.onPageVariablesReady = function () {
+        /*
+         * variables can be accessed through '$scope.Variables' property here
+         * e.g. $scope.Variables.staticVariable1.getData()
+         */
+    };
+    
+    /* perform any action with widgets inside this block */
+    $scope.onPageReady = function () {
+        /*
+         * widgets can be accessed through '$scope.Widgets' property here
+         * e.g. $scope.Widgets.byId(), $scope.Widgets.byName()or access widgets by $scope.Widgets.widgetName
+         */
+    };
+
+}]);
+
+</script>
+<script id="Details.variables.json">
+var _DetailsPage_Variables_ ={};
+</script>
+<script id="Details.html" type="text/ng-template">
+<wm-page name="page1" data-ng-controller="DetailsPageController">
+    <wm-mobile-navbar title="Details" backbutton="false" name="mobile_navbar1"></wm-mobile-navbar>
+    <wm-content name="content1">
+        <wm-page-content name="page_content1" columnwidth="12">
+            <wm-container marginbottom="10" marginright="10" marginleft="10" margintop="10" paddingbottom="10" paddingright="10" paddingleft="10" paddingtop="10" name="container1">
+                <wm-label caption="bind:Variables.PickupOptions.dataSet[0].dataValue" width="191" name="label1"></wm-label>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+</wm-page>
+</script>

@@ -1,0 +1,35 @@
+<wm-page name="page1" data-ng-controller="MainPageController">
+    <wm-left-panel name="left_panel1" columnwidth="2" content="leftnav"></wm-left-panel>
+    <wm-mobile-navbar leftnavpaneliconclass="glyphicon glyphicon-info-sign" backbutton="false" title="Ride" name="mobile_navbar1"></wm-mobile-navbar>
+    <wm-content name="content1">
+        <wm-page-content name="page_content1" columnwidth="12">
+            <wm-composite name="composite1">
+                <wm-label caption="Gender" name="label1" class="col-md-3"></wm-label>
+                <wm-container name="container1" class="col-md-9">
+                    <wm-select datavalue="Male" dataset="Male, Female" name="select1"></wm-select>
+                </wm-container>
+            </wm-composite>
+            <wm-composite name="composite2">
+                <wm-label caption="Name" name="label2" class="col-md-3"></wm-label>
+                <wm-container name="container2" class="col-md-9">
+                    <wm-text placeholder="Enter name" name="text1"></wm-text>
+                </wm-container>
+            </wm-composite>
+            <wm-composite name="composite4">
+                <wm-label caption="Pickup Location" name="label4" class="col-md-3"></wm-label>
+                <wm-container name="container4" class="col-md-9">
+                    <wm-select datafield="dataValue" dataset="bind:Variables.PickupOptions.dataSet" name="select2"></wm-select>
+                </wm-container>
+            </wm-composite>
+            <wm-composite name="composite5">
+                <wm-label caption="Drop Location" name="label5" class="col-md-3"></wm-label>
+                <wm-container name="container5" class="col-md-9">
+                    <wm-select datafield="dataValue" dataset="bind:Variables.PickupOptions.dataSet" name="select3"></wm-select>
+                </wm-container>
+            </wm-composite>
+            <wm-container horizontalalign="center" name="container6">
+                <wm-button on-click="goToPage_Details" color="#fffffff" backgroundcolor="#258fd7" name="button1" class="btn-default" caption="Book a Ride" type="button"></wm-button>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+</wm-page>
