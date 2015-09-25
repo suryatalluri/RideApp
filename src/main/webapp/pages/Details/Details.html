@@ -1,10 +1,16 @@
 <wm-page name="page1" data-ng-controller="DetailsPageController">
-    <wm-mobile-navbar title="Details" backbutton="false" name="mobile_navbar1"></wm-mobile-navbar>
+    <wm-mobile-navbar title="Details" backbutton="true" name="mobile_navbar1"></wm-mobile-navbar>
     <wm-content name="content1">
         <wm-page-content name="page_content1" columnwidth="12">
             <wm-container marginbottom="10" marginright="10" marginleft="10" margintop="10" paddingbottom="10" paddingright="10" paddingleft="10" paddingtop="10" name="container1">
-                <wm-label caption="bind:Variables.PickupOptions.dataSet[0].dataValue" width="191" name="label1"></wm-label>
+                <wm-label caption="bind:Variables.staticVariable1.dataSet.dataValue" width="191" name="label1"></wm-label>
             </wm-container>
+            <wm-composite name="composite1">
+                <wm-label class="col-md-3" name="label2"></wm-label>
+                <wm-container class="col-md-9" name="container2">
+                    <wm-text name="text1"></wm-text>
+                </wm-container>
+            </wm-composite>
         </wm-page-content>
     </wm-content>
 </wm-page>
