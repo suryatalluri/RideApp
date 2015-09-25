@@ -87,6 +87,7 @@
 		"_id": "wm-PickupOptions-wm.Variable-1443162431172"
 	},
 	"staticVariable1": {
+		"name": "staticVariable1",
 		"type": "string",
 		"isList": false,
 		"owner": "App",
@@ -109,5 +110,44 @@
 		"saveInPhonegap": false,
 		"category": "wm.Variable",
 		"_id": "wm-staticVariable1-wm.Variable-1443178665402"
+	},
+	"ConfirmationAlert": {
+		"name": "ConfirmationAlert",
+		"owner": "App",
+		"operation": "confirm",
+		"onClose": "goToPage-Main",
+		"onOk": "goToPage_Details",
+		"dataBinding": {
+			"text": "bind:'Details: '\n+' Car type: ' +Widgets.select1.datavalue\n+' Pickup location: ' +Widgets.select2.datavalue \n+' Drop Location: ' +Widgets.select3.datavalue \n+'. Please confirm.'",
+			"okButtonText": "Confirm",
+			"cancelButtonText": "Cancel"
+		},
+		"category": "wm.NotificationVariable",
+		"_id": "wm-ConfirmationAlert-wm.NotificationVariable-1443179568442"
+	},
+	"SelectedCartypeOption": {
+		"name": "SelectedCartypeOption",
+		"type": "string",
+		"isList": false,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataSet",
+				"type": "object",
+				"fields": [
+					{
+						"name": "dataValue",
+						"type": "string",
+						"value": "bind:Widgets.select1.datavalue"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-SelectedCartypeOption-wm.Variable-1443183420623"
 	}
 }

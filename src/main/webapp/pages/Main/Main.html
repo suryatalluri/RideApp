@@ -3,36 +3,52 @@
     <wm-mobile-navbar leftnavpaneliconclass="glyphicon glyphicon-info-sign" backbutton="false" title="Ride" name="mobile_navbar1"></wm-mobile-navbar>
     <wm-content name="content1">
         <wm-page-content name="page_content1" columnwidth="12">
-            <wm-composite name="composite1">
-                <wm-label caption="Gender" name="label1" class="col-md-3"></wm-label>
+            <wm-composite name="composite1" margintop="5" marginleft="10" marginright="10" marginbottom="5" required="true">
+                <wm-label caption="Car type" name="label1" class="col-md-3"></wm-label>
                 <wm-container name="container1" class="col-md-9">
-                    <wm-select datavalue="Male" dataset="Male, Female" name="select1"></wm-select>
+                    <wm-select datavalue="Male" dataset="Indica, Sedan, Maruthi" name="select1"></wm-select>
                 </wm-container>
             </wm-composite>
-            <wm-composite name="composite2">
+            <wm-composite name="composite2" margintop="5" marginleft="10" marginright="10" marginbottom="5" required="true">
                 <wm-label caption="Name" name="label2" class="col-md-3"></wm-label>
                 <wm-container name="container2" class="col-md-9">
                     <wm-text placeholder="Enter name" name="text1"></wm-text>
                 </wm-container>
             </wm-composite>
-            <wm-composite name="composite4">
+            <wm-composite name="composite4" margintop="5" marginleft="10" marginright="10" marginbottom="5" required="true">
                 <wm-label caption="Pickup Location" name="label4" class="col-md-3"></wm-label>
                 <wm-container name="container4" class="col-md-9">
                     <wm-select datafield="dataValue" dataset="bind:Variables.PickupOptions.dataSet" name="select2"></wm-select>
                 </wm-container>
             </wm-composite>
-            <wm-composite name="composite5">
+            <wm-composite name="composite5" margintop="5" marginleft="10" marginright="10" marginbottom="5" required="true">
                 <wm-label caption="Drop Location" name="label5" class="col-md-3"></wm-label>
                 <wm-container name="container5" class="col-md-9">
                     <wm-select datafield="dataValue" dataset="bind:Variables.PickupOptions.dataSet" name="select3"></wm-select>
                 </wm-container>
             </wm-composite>
-            <wm-composite name="composite5_1" horizontalalign="left">
+            <wm-composite name="composite6" margintop="5" marginleft="10" marginright="10" marginbottom="5" required="true">
+                <wm-label class="col-md-3" name="label5_1" caption="Date and Time"></wm-label>
+                <wm-container class="col-md-9" name="container6_1">
+                    <wm-datetime name="datetime1"></wm-datetime>
+                </wm-container>
+            </wm-composite>
+            <wm-composite name="composite7" margintop="5" marginleft="10" marginright="10" marginbottom="5" required="true">
+                <wm-label class="col-md-3" name="label7" caption="Phone number"></wm-label>
+                <wm-container class="col-md-9" name="container7">
+                    <wm-text name="text2" type="number"></wm-text>
+                </wm-container>
+            </wm-composite>
+            <wm-composite name="composite5_1" horizontalalign="left" margintop="5" marginleft="10" marginright="10" marginbottom="5">
                 <wm-radio caption="Ride now" class="col-md-push-3" name="radio1"></wm-radio>
             </wm-composite>
-            <wm-container horizontalalign="center" name="container6">
-                <wm-button on-click="goToPage_Details" color="#fffffff" backgroundcolor="#258fd7" name="button1" class="btn-default" caption="Book a Ride" type="button"></wm-button>
+            <wm-container horizontalalign="center" name="container6" margintop="5" marginleft="5" marginright="5" marginbottom="5">
+                <wm-button on-click="ConfirmationAlert" color="#fffffff" backgroundcolor="#258fd7" name="button1" class="btn-default" caption="Book a Ride" type="button"></wm-button>
             </wm-container>
         </wm-page-content>
     </wm-content>
+    <wm-view class="dialog-view" name="view1" horizontalalign="left" paddingtop="10" paddingleft="10" paddingright="10" paddingbottom="10">
+        <wm-confirmdialog name="notificationconfirmdialog" controller="NotificationDialogController" notificationdialog="confirm" message="{{notification.text}}" title="confirm" oktext="{{notification.okButtonText}}" canceltext="{{notification.cancelButtonText}}"
+        on-ok="variableOnOk()" on-cancel="variableOnCancel()" on-close="variableOnClose()"></wm-confirmdialog>
+    </wm-view>
 </wm-page>
